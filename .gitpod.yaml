@@ -1,0 +1,16 @@
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - name: Get Core & Configure
+    before: |
+      wget https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
+      chmod u+x hyperexecute
+      
+    init: |
+      echo "Performing test"
+      ./hyperexecute --user=eskor.baba --key=6l4UrYtoT89IXVc1Isw0Ytl1mH5wl4q2XYH8cAqVoms4ev2gD1 --config yaml/win/.hyperexecute_autosplits.yaml --download-artifacts --force-clean-artifacts
+      echo "Test completion"

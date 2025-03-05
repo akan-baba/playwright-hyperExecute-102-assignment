@@ -1,0 +1,23 @@
+{
+  "name": "playwright-hyperexecute-102-assignment",
+  "version": "1.0.0",
+  "description": "Playwright 102 Assignment – This repository contains Playwright automation scripts executed using LambdaTest’s HyperExecute platform with Auto-Split Execution, Matrix-based Test Execution, and Secrets Management.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akan-baba/playwright-hyperExecute-102-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/akan-baba/playwright-hyperExecute-102-assignment/issues"
+  },
+  "homepage": "https://github.com/akan-baba/playwright-hyperExecute-102-assignment#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.9"
+  }
+}

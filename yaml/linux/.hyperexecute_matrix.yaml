@@ -1,0 +1,25 @@
+---
+version: "0.1"
+matrix:
+  os: [linux]  # Run only on Linux
+  methods: ['e2e/1-simple-form-demo.spec.js', '2-drag-drop-sliders.spec.js', '3-input-form-submit.spec.js']
+
+runson: ${matrix.os}
+
+
+# Pre-test setup
+pre:
+  - npm install
+  - npx playwright install --with-deps
+
+# Cache dependencies
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+
+# Execute Playwright Tests
+testSuites:
+  - npx playwright test $methods
+
+# Job Label
+jobLabel: [playwright-VanillaJS, linux, matrix]

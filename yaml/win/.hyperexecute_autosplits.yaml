@@ -1,0 +1,35 @@
+---
+version: "0.1"
+globalTimeout: 300  # 5 minutes total timeout
+testSuiteTimeout: 120  # 2 minutes per test suite
+testSuiteStep: 90  # 1.5 minutes per test
+runson: win  # Run on Windows
+autosplit: true  # Enables automatic test splitting
+retryOnFailure: true
+maxRetries: 2
+concurrency: 3
+
+# Pre-test setup
+pre:
+  - npm install
+  - npx playwright install --with-deps
+
+# Cache dependencies
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+
+# Test Discovery
+testDiscovery:
+  type: raw
+  mode: dynamic
+  command: grep -lr 'describe' e2e
+
+# Execute Playwright Tests
+testRunnerCommand: npx playwright test 
+
+# Job Label
+jobLabel: [playwright-VanillaJS, win, autosplit]
+
+# Enable Reports
+report: enabled
