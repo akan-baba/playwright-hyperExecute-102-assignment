@@ -14,13 +14,13 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: 1,
   reporter: "html",
-  
-  
 
   use: {
-    trace: "on",
-    video: "retain-on-failure",
-    screenshot: "only-on-failure",
+    baseURL: "https://www.lambdatest.com/selenium-playground",
+    browserName: "chromium",
+    video: "on",
+    trace: "retain-on-failure",
+    screenshot: "on",
     console: "on",
     network: "on",
   },
@@ -38,18 +38,16 @@ export default defineConfig({
     // },
 
     {
-      name: 'chrome:latest@lambdatest',
+      name: "chrome:latest@lambdatest",
       use: {
-        viewport: { width: 1280, height: 720 }
-      }
+        viewport: { width: 1280, height: 720 },
+      },
     },
     {
-      name: 'pw-firefox:latest@lambdatest',
+      name: "pw-firefox:latest@lambdatest",
       use: {
-        viewport: { width: 1280, height: 720 }
-      }
-    }
-    
+        viewport: { width: 1280, height: 720 },
+      },
+    },
   ],
-
 });

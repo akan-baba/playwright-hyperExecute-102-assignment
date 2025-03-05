@@ -2,6 +2,7 @@
 version: "0.1"
 matrix:
   os: [linux]  # Run only on Linux
+  browser: ["Chrome", "Firefox"]
   methods: ['e2e/1-simple-form-demo.spec.js', '2-drag-drop-sliders.spec.js', '3-input-form-submit.spec.js']
 
 runson: ${matrix.os}
