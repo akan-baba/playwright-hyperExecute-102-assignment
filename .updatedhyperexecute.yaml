@@ -1,7 +1,7 @@
 version: "0.1"
-user: eskor.baba
-key: 6l4UrYtoT89IXVc1Isw0Ytl1mH5wl4q2XYH8cAqVoms4ev2gD1
-matrix: {methods: [e2e/1-simple-form-demo.spec.js, 2-drag-drop-sliders.spec.js, 3-input-form-submit.spec.js], os: [linux]}
+user: akan_antia
+key: 9PIm72DTPCJUNTv5cGGoPqkfDSVckIPhhFCosnaAtTl7fdNr6j
+matrix: {browser: [Chrome, Firefox], methods: [e2e/1-simple-form-demo.spec.js, 2-drag-drop-sliders.spec.js, 3-input-form-submit.spec.js], os: [linux]}
 testSuites: [npx playwright test $methods]
 pre: [npm install, npx playwright install --with-deps]
 preDirectives:
@@ -23,7 +23,7 @@ tunnelOpts:
 cacheDirectories:
     - node_modules
 cacheKey: '{{ checksum "package-lock.json" }}'
-jobID: 2dfec0f8-4d6d-49fc-b466-fc104319da01
+jobID: 4c8eea22-5402-40ed-8d78-f39a4e55347c
 codeDirectory: playwright-hyperExecute-102-assignment
 framework:
     name: ""
